@@ -16,15 +16,14 @@
 
 В рамках практических работ 2–5 были обучены и сравнены следующие модели классификации изображений:
 
-| Модель | Accuracy | Precision | Recall | F1-мера | Время инференса (мс) |
+| Модель | Accuracy | Precision | Recall | F1-мера | Время инференса (мс/img) |
 |---|---|---|---|---|---|
-| Простая CNN (ПР-2) | — | — | — | — | — |
-| CNN + BatchNorm (ПР-3) | — | — | — | — | — |
-| CNN + Dropout (ПР-4) | — | — | — | — | — |
-| Transfer Learning (ПР-5) | — | — | — | — | — |
-| **Лучшая модель** | **—** | **—** | **—** | **—** | **—** |
+| **CNN+BN+Dropout (ПР-4)** ✅ | **0.9315** | **0.9315** | **0.9315** | **0.9314** | 2.374 |
+| CNN (ПР-3) | 0.8883 | 0.8905 | 0.8883 | 0.8878 | 1.768 |
+| Dense (ПР-2) | 0.5640 | 0.5851 | 0.5640 | 0.5507 | 1.184 |
+| EfficientNetB4 (ПР-5) | 0.5423 | 0.5792 | 0.5423 | 0.4776 | 30.403 |
 
-> Лучшая модель выбрана по метрике **F1-мера** и сохранена в `best_classification_model.keras`.
+> Лучшая модель выбрана по метрике **F1-мера** — **CNN+BN+Dropout (ПР-4)** с F1 = 0.9314. Сохранена в `best_classification_model.keras`.
 
 ---
 
@@ -69,7 +68,7 @@
 1. **Клонируйте репозиторий:**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/pr_10_backend.git
+   git clone https://github.com/Koroteika/pr_10_backend.git
    cd pr_10_backend
    ```
 
@@ -152,7 +151,7 @@ print(response.json())
 
 - **Публичный API:** https://pr-10-backend.onrender.com/predict
 - **Документация (Swagger):** https://pr-10-backend.onrender.com/docs
-- **Streamlit-интерфейс:** https://pr-10-frontend.streamlit.app
+- **Streamlit-интерфейс:** https://tluxaikgl8dlhgdchbgh49.streamlit.app/
 
 ---
 
